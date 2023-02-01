@@ -30,9 +30,11 @@ const App = () => {
 
   const deleteById = (id) => {
     const tasksList = tasks.filter((task) => {
-      task.id !== id;
+      if (task.id !== id) {
+        return task;
+      }
     });
-    console.log(tasksList);
+    // console.log(tasksList);
     return setTasks(tasksList);
   };
 
